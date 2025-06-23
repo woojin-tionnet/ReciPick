@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     id("com.google.dagger.hilt.android")
     id("com.google.devtools.ksp")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -93,4 +94,12 @@ dependencies {
 
     //GSON
     implementation("com.google.code.gson:gson:2.10.1")
+
+    //FireBase
+    // Import the BoM for the Firebase platform
+    implementation(platform("com.google.firebase:firebase-bom:32.8.1"))
+    // Google Login, 버전은 BOM 으로 관리
+    implementation("com.google.firebase:firebase-auth")
+    // Google Sign-In SDK 명시적으로 추가
+    implementation("com.google.android.gms:play-services-auth:21.3.0")
 }

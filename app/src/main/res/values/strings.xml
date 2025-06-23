@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">recipick</string>
+    <!--  Google Login Web Client Id  -->
+    <string name="google_web_client_id">1079056305605-k8u3loj2v0kdq728hsijlc5cq7nlhq0t.apps.googleusercontent.com</string>
 
     <!--  메인  -->
     <string name="main_title">내 레시피</string>
