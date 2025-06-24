@@ -1,7 +1,7 @@
 package com.woojin.recipick.di
 
-import com.woojin.recipick.data.impl.LoginRepositoryImpl
-import com.woojin.recipick.data.local.impl.RecipeRepositoryImpl
+import com.woojin.recipick.data.repository.LoginRepositoryImpl
+import com.woojin.recipick.data.repository.RecipeRepositoryImpl
 import com.woojin.recipick.domain.repository.LoginRepository
 import com.woojin.recipick.domain.repository.RecipeRepository
 import dagger.Binds

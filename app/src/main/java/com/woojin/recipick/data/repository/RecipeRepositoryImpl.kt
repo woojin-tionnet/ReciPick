@@ -1,4 +1,4 @@
-package com.woojin.recipick.data.local.impl
+package com.woojin.recipick.data.repository
 
 import com.woojin.recipick.data.local.dao.RecipeDao
 import com.woojin.recipick.data.local.entity.RecipeEntity

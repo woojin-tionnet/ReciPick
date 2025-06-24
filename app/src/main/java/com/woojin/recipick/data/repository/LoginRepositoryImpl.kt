@@ -1,4 +1,4 @@
-package com.woojin.recipick.data.impl
+package com.woojin.recipick.data.repository
 
 import android.app.Activity
 import android.content.Context
