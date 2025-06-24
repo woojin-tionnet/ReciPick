@@ -102,4 +102,10 @@ dependencies {
     implementation("com.google.firebase:firebase-auth")
     // Google Sign-In SDK 명시적으로 추가
     implementation("com.google.android.gms:play-services-auth:21.3.0")
+
+    val credentialVersion = "1.2.0"
+    val idLibraryVersion = "1.1.0"
+    implementation ("androidx.credentials:credentials:$credentialVersion")
+    implementation ("androidx.credentials:credentials-play-services-auth:$credentialVersion")
+    implementation ("com.google.android.libraries.identity.googleid:googleid:$idLibraryVersion")
 }
