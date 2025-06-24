@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -34,7 +35,9 @@ import com.woojin.recipick.presentation.main.components.MyTopAppBar
 fun AppScreen(
     viewModel: MainViewModel,
     onClick: () -> Unit,
-    mainItemClick: (Int) -> Unit
+    mainItemClick: (Int) -> Unit,
+    signInButton: () -> Unit,
+    signOutButton: () -> Unit
 ) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -57,7 +60,9 @@ fun AppScreen(
                 .padding(innerPadding)
                 .background(Color.White),
             viewModel = viewModel,
-            mainItemClick = { recipeId -> mainItemClick(recipeId) }
+            mainItemClick = { recipeId -> mainItemClick(recipeId) },
+            signInButton = signInButton,
+            signOutButton = signOutButton
         )
     }
 }
@@ -66,7 +71,9 @@ fun AppScreen(
 fun MainScreen(
     modifier: Modifier = Modifier,
     viewModel: MainViewModel,
-    mainItemClick: (Int) -> Unit
+    mainItemClick: (Int) -> Unit,
+    signInButton: () -> Unit,
+    signOutButton: () -> Unit
 ) {
     val recipesState by viewModel.recipes.collectAsState() //저장된 레시피
     var showDeleteDialog by remember { mutableStateOf(false) } //삭제 확인 dialog 표시 여부
@@ -102,6 +109,19 @@ fun MainScreen(
                             deleteIndex = recipe.id ?: -1
                         }
                     )
+                }
+
+                item {
+                    Button(
+                        onClick = signInButton
+                    ) {
+                        Text(text = "로그인")
+                    }
+                    Button(
+                        onClick = signOutButton
+                    ) {
+                        Text(text = "로그아웃")
+                    }
                 }
             }
         }

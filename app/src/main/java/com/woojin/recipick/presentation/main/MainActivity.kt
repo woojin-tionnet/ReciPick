@@ -1,6 +1,7 @@
 package com.woojin.recipick.presentation.main
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -12,6 +13,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.woojin.recipick.domain.model.LoginResult
 import com.woojin.recipick.presentation.add_recipe.detail.RecipeDetailScreen
 import com.woojin.recipick.presentation.add_recipe.ingredients.AddRecipeIngredientsScreen
 import com.woojin.recipick.presentation.add_recipe.steps.AddRecipeStepsScreen
@@ -47,6 +49,19 @@ class MainActivity : ComponentActivity() {
                         }
                     }
                 }
+                LaunchedEffect(key1 = Unit) {
+                    viewModel.signInGoogleState.collect {
+                        when(it) {
+                            is LoginResult.Success -> {
+                                Toast.makeText(this@MainActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
+                            }
+                            is LoginResult.Failure -> {
+                                Toast.makeText(this@MainActivity, "로그인 실패", Toast.LENGTH_SHORT).show()
+                            }
+                            else -> {}
+                        }
+                    }
+                }
                 NavHost(
                     navController = navController,
                     startDestination = Screen.Main.route
@@ -57,7 +72,9 @@ class MainActivity : ComponentActivity() {
                             onClick = { viewModel.navUpdate(Screen.AddRecipeTitleAndIngredients) },
                             mainItemClick = { recipeId ->
                                 navController.navigate(Screen.RecipeDetail.createRoute(recipeId))
-                            }
+                            },
+                            signInButton = { viewModel.googleLogin(this@MainActivity) },
+                            signOutButton = { viewModel.googleLogout() }
                         )
                     }
 
