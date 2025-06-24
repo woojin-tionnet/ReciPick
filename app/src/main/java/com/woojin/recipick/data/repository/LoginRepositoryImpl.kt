@@ -98,7 +98,8 @@ class LoginRepositoryImpl @Inject constructor(
     }
 
     override suspend fun signOutGoogle(): LoginResult {
-        // TODO: 앱의 로그아웃 정책에 따라 구현
-        return LoginResult.Success("Signed out successfully") // 현재는 즉시 성공 처리
+        //저장된 SharedPreferences 값 초기화
+        appPreferencesDataSource.clearAuthToken()
+        return LoginResult.Success("Signed out successfully")
     }
 }
