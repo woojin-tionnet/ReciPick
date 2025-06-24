@@ -71,41 +71,37 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     //viewModel
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.3")
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 
     //Hilt
-    implementation("com.google.dagger:hilt-android:2.51.1")
-    ksp("com.google.dagger:hilt-android-compiler:2.51.1")
-    implementation("androidx.hilt:hilt-navigation-compose:1.2.0") //hiltViewModel 델리게이트 사용을 위한 추가
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
+    implementation(libs.androidx.hilt.navigation.compose) //hiltViewModel 델리게이트 사용을 위한 추가
 
     //네비게이션
-    implementation("androidx.navigation:navigation-compose:2.7.7")
+    implementation(libs.androidx.navigation.compose)
 
     //Room
-    val roomVersion = "2.4.2"
-    implementation("androidx.room:room-runtime:$roomVersion") //기본
-    ksp("androidx.room:room-compiler:$roomVersion") //또는 kapt
-    implementation("androidx.room:room-ktx:$roomVersion") //Flow지원을 위해서
+    implementation(libs.androidx.room.runtime) //기본
+    ksp(libs.androidx.room.compiler) //또는 kapt
+    implementation(libs.androidx.room.ktx) //Flow지원을 위해서
 
     //Coroutines
-    val coroutineVersion = "1.7.3"
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion")
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
 
     //GSON
-    implementation("com.google.code.gson:gson:2.10.1")
+    implementation(libs.gson)
 
     //FireBase
     // Import the BoM for the Firebase platform
-    implementation(platform("com.google.firebase:firebase-bom:32.8.1"))
+    implementation(platform(libs.firebase.bom))
     // Google Login, 버전은 BOM 으로 관리
-    implementation("com.google.firebase:firebase-auth")
+    implementation(libs.firebase.auth)
     // Google Sign-In SDK 명시적으로 추가
-    implementation("com.google.android.gms:play-services-auth:21.3.0")
+    implementation(libs.play.services.auth)
 
-    val credentialVersion = "1.2.0"
-    val idLibraryVersion = "1.1.0"
-    implementation ("androidx.credentials:credentials:$credentialVersion")
-    implementation ("androidx.credentials:credentials-play-services-auth:$credentialVersion")
-    implementation ("com.google.android.libraries.identity.googleid:googleid:$idLibraryVersion")
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.googleid)
 }
