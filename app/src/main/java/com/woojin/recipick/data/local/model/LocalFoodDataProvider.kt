@@ -1,4 +1,4 @@
-package com.woojin.recipick.data.local.datasource
+package com.woojin.recipick.data.local.model
 
 object FoodCategories {
     val meats = listOf(
