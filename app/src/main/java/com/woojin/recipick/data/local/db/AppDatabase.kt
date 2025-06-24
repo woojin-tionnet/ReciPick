@@ -1,4 +1,4 @@
-package com.woojin.recipick.data.local
+package com.woojin.recipick.data.local.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

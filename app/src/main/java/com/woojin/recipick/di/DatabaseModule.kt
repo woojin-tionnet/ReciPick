@@ -2,7 +2,7 @@ package com.woojin.recipick.di
 
 import android.content.Context
 import androidx.room.Room
-import com.woojin.recipick.data.local.AppDatabase
+import com.woojin.recipick.data.local.db.AppDatabase
 import com.woojin.recipick.data.local.dao.RecipeDao
 import dagger.Module
 import dagger.Provides
