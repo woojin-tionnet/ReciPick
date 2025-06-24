@@ -11,6 +11,7 @@ import com.google.android.libraries.identity.googleid.GetGoogleIdOption
 import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential
 import com.google.android.libraries.identity.googleid.GoogleIdTokenParsingException
 import com.woojin.recipick.R
+import com.woojin.recipick.data.local.datasource.AppPreferencesDataSource
 import com.woojin.recipick.domain.model.LoginResult
 import com.woojin.recipick.domain.repository.LoginRepository
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -20,7 +21,8 @@ import java.security.SecureRandom
 import javax.inject.Inject
 
 class LoginRepositoryImpl @Inject constructor(
-    @ApplicationContext private val applicationContext: Context
+    @ApplicationContext private val applicationContext: Context,
+    private val appPreferencesDataSource: AppPreferencesDataSource
 ) : LoginRepository {
 
     private companion object {
@@ -71,9 +73,8 @@ class LoginRepositoryImpl @Inject constructor(
                     val googleIdTokenCredential =
                         GoogleIdTokenCredential.createFrom(credential.data)
                     val googleIdToken = googleIdTokenCredential.idToken
-                    Log.d(TAG, "Google ID Token: $googleIdToken")
                     if (googleIdToken.isNotBlank()) {
-                        // 성공 시, ID 토큰을 로컬에 저장할 수 있음 (예: authLocalDataSource.saveIdToken(googleIdToken))
+                        appPreferencesDataSource.saveAuthToken(token = googleIdToken)
                         LoginResult.Success(googleIdToken)
                     } else {
                         Log.e(TAG, "Google ID Token is null or empty.")

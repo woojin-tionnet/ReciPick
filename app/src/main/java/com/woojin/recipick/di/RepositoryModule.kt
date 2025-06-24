@@ -1,5 +1,7 @@
 package com.woojin.recipick.di
 
+import com.woojin.recipick.data.local.datasource.AppPreferencesDataSource
+import com.woojin.recipick.data.local.datasource.AppPreferencesDataSourceImpl
 import com.woojin.recipick.data.repository.LoginRepositoryImpl
 import com.woojin.recipick.data.repository.RecipeRepositoryImpl
 import com.woojin.recipick.domain.repository.LoginRepository
@@ -22,5 +24,10 @@ abstract class RepositoryModule {
     abstract fun bindLoginRepository(
         loginRepositoryImpl: LoginRepositoryImpl
     ): LoginRepository
+
+    @Binds
+    abstract fun bindAppPreferencesDataSource(
+        appPreferencesDataSourceImpl: AppPreferencesDataSourceImpl
+    ): AppPreferencesDataSource
 
 }
