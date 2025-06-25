@@ -1,4 +1,4 @@
-package com.woojin.recipick.presentation.add_recipe.steps
+package com.woojin.recipick.presentation.home.add_recipe.steps
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth

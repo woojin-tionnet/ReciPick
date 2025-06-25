@@ -1,4 +1,4 @@
-package com.woojin.recipick.presentation.add_recipe.title_and_ingredients
+package com.woojin.recipick.presentation.home.add_recipe.title_and_ingredients
 
 import com.woojin.recipick.utils.Utils
 

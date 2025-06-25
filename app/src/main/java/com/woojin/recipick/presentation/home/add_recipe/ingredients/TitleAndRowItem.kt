@@ -1,4 +1,4 @@
-package com.woojin.recipick.presentation.add_recipe.ingredients
+package com.woojin.recipick.presentation.home.add_recipe.ingredients
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

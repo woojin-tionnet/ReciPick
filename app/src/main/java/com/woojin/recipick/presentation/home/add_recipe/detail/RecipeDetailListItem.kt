@@ -1,4 +1,4 @@
-package com.woojin.recipick.presentation.add_recipe.detail
+package com.woojin.recipick.presentation.home.add_recipe.detail
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row

@@ -1,6 +1,6 @@
 package com.woojin.recipick.utils
 
-import com.woojin.recipick.presentation.add_recipe.title_and_ingredients.Fraction
+import com.woojin.recipick.presentation.home.add_recipe.title_and_ingredients.Fraction
 
 object Utils {
 

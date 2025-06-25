@@ -10,7 +10,7 @@ import com.woojin.recipick.data.local.entity.RecipeEntity
 import com.woojin.recipick.domain.model.LoginResult
 import com.woojin.recipick.domain.usecase.SignInGoogleUseCase
 import com.woojin.recipick.domain.usecase.SignOutGoogleUseCase
-import com.woojin.recipick.presentation.add_recipe.state.RecipeInputState
+import com.woojin.recipick.presentation.home.add_recipe.state.RecipeInputState
 import com.woojin.recipick.presentation.navigation.Screen
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow

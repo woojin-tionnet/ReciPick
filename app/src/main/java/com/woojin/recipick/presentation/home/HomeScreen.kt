@@ -14,10 +14,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.woojin.recipick.domain.model.LoginResult
-import com.woojin.recipick.presentation.add_recipe.detail.RecipeDetailScreen
-import com.woojin.recipick.presentation.add_recipe.ingredients.AddRecipeIngredientsScreen
-import com.woojin.recipick.presentation.add_recipe.steps.AddRecipeStepsScreen
-import com.woojin.recipick.presentation.add_recipe.title_and_ingredients.AddRecipeTitleAndIngredients
+import com.woojin.recipick.presentation.home.add_recipe.detail.RecipeDetailScreen
+import com.woojin.recipick.presentation.home.add_recipe.ingredients.AddRecipeIngredientsScreen
+import com.woojin.recipick.presentation.home.add_recipe.steps.AddRecipeStepsScreen
+import com.woojin.recipick.presentation.home.add_recipe.title_and_ingredients.AddRecipeTitleAndIngredients
 import com.woojin.recipick.presentation.main.MainActivity
 import com.woojin.recipick.presentation.navigation.Screen
 

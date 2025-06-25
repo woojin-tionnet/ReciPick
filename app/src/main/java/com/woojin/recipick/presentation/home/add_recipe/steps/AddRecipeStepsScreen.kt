@@ -1,4 +1,4 @@
-package com.woojin.recipick.presentation.add_recipe.steps
+package com.woojin.recipick.presentation.home.add_recipe.steps
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Column
