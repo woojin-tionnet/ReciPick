@@ -19,7 +19,6 @@ import com.woojin.recipick.presentation.home.add_recipe.ingredients.AddRecipeIng
 import com.woojin.recipick.presentation.home.add_recipe.steps.AddRecipeStepsScreen
 import com.woojin.recipick.presentation.home.add_recipe.title_and_ingredients.AddRecipeTitleAndIngredients
 import com.woojin.recipick.presentation.main.MainActivity
-import com.woojin.recipick.presentation.navigation.Screen
 
 @Composable
 fun HomeScreen(
