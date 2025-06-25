@@ -1,7 +1,6 @@
 package com.woojin.recipick.domain.model
 
 sealed class LoginResult {
-    object Loading : LoginResult()
     data class Success(
         val idToken: String
     ) : LoginResult()

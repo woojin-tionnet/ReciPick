@@ -36,8 +36,6 @@ fun MyRecipeMain(
     viewModel: HomeViewModel,
     onClick: () -> Unit,
     mainItemClick: (Int) -> Unit,
-    signInButton: () -> Unit,
-    signOutButton: () -> Unit
 ) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -92,19 +90,6 @@ fun MyRecipeMain(
                                 deleteIndex = recipe.id ?: -1
                             }
                         )
-                    }
-
-                    item {
-                        Button(
-                            onClick = signInButton
-                        ) {
-                            Text(text = "로그인")
-                        }
-                        Button(
-                            onClick = signOutButton
-                        ) {
-                            Text(text = "로그아웃")
-                        }
                     }
                 }
             }

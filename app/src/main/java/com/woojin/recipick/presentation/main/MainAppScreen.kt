@@ -70,7 +70,7 @@ fun MainAppScreen(
             startDestination = BottomNavItem.Home.route, // 시작 화면 경로
             modifier = Modifier.padding(innerPaddingFromMainActivity) // Scaffold 패딩 적용
         ) {
-            composable(BottomNavItem.Home.route) { HomeScreen(activity) }
+            composable(BottomNavItem.Home.route) { HomeScreen() }
             composable(BottomNavItem.Community.route) { CommunityScreen() }
             composable(BottomNavItem.Settings.route) { SettingsScreen() }
         }
