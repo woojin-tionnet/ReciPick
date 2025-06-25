@@ -19,14 +19,13 @@ import com.woojin.recipick.presentation.add_recipe.ingredients.AddRecipeIngredie
 import com.woojin.recipick.presentation.add_recipe.steps.AddRecipeStepsScreen
 import com.woojin.recipick.presentation.add_recipe.title_and_ingredients.AddRecipeTitleAndIngredients
 import com.woojin.recipick.presentation.main.MainActivity
-import com.woojin.recipick.presentation.main.MainViewModel
 import com.woojin.recipick.presentation.navigation.Screen
 
 @Composable
 fun HomeScreen(
     activity: MainActivity
 ) {
-    val viewModel: MainViewModel = hiltViewModel()
+    val viewModel: HomeViewModel = hiltViewModel()
     val homeNavController = rememberNavController()
     val context = LocalContext.current
     LaunchedEffect(key1 = Unit) {

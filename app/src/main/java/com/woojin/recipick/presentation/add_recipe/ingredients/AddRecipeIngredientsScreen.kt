@@ -12,13 +12,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import com.woojin.recipick.R
 import com.woojin.recipick.data.local.model.FoodCategories
-import com.woojin.recipick.presentation.main.MainViewModel
+import com.woojin.recipick.presentation.home.HomeViewModel
 import com.woojin.recipick.presentation.main.components.MyTopAppBar
 
 @Composable
 fun AddRecipeIngredientsScreen(
     navController: NavHostController,
-    viewModel: MainViewModel
+    viewModel: HomeViewModel
 ) {
     Scaffold (
         modifier = Modifier.fillMaxSize(),

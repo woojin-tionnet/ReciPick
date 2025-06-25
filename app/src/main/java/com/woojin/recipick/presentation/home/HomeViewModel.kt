@@ -1,4 +1,4 @@
-package com.woojin.recipick.presentation.main
+package com.woojin.recipick.presentation.home
 
 import android.app.Activity
 import androidx.compose.runtime.State
@@ -25,7 +25,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(
+class HomeViewModel @Inject constructor(
     private val recipeDao: RecipeDao,
     private val signInGoogleUseCase: SignInGoogleUseCase,
     private val signOutGoogleUseCase: SignOutGoogleUseCase

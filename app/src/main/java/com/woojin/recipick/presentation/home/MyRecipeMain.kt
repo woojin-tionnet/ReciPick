@@ -26,7 +26,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.woojin.recipick.R
-import com.woojin.recipick.presentation.main.MainViewModel
 import com.woojin.recipick.presentation.main.components.AlertNoTitleFunc
 import com.woojin.recipick.presentation.main.components.FloatingButton
 import com.woojin.recipick.presentation.main.components.MyTopAppBar
@@ -34,7 +33,7 @@ import com.woojin.recipick.presentation.main.components.RecipeMainItem
 
 @Composable
 fun MyRecipeMain(
-    viewModel: MainViewModel,
+    viewModel: HomeViewModel,
     onClick: () -> Unit,
     mainItemClick: (Int) -> Unit,
     signInButton: () -> Unit,
