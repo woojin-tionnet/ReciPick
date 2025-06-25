@@ -1,4 +1,4 @@
-package com.woojin.recipick.presentation.main.components
+package com.woojin.recipick.presentation.components
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth

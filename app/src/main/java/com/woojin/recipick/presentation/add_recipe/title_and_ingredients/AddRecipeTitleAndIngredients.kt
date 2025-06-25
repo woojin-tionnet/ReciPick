@@ -37,7 +37,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.woojin.recipick.R
-import com.woojin.recipick.presentation.main.components.MyTopAppBar
+import com.woojin.recipick.presentation.components.MyTopAppBar
 import com.woojin.recipick.presentation.theme.RecipickTheme
 import com.woojin.recipick.utils.Utils
 

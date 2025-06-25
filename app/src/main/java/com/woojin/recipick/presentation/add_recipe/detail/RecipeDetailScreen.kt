@@ -28,9 +28,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.woojin.recipick.R
 import com.woojin.recipick.data.local.entity.RecipeEntity
-import com.woojin.recipick.presentation.main.components.AlertNoTitleFunc
-import com.woojin.recipick.presentation.main.components.FloatingButton
-import com.woojin.recipick.presentation.main.components.MyTopAppBar
+import com.woojin.recipick.presentation.components.AlertNoTitleFunc
+import com.woojin.recipick.presentation.components.FloatingButton
+import com.woojin.recipick.presentation.components.MyTopAppBar
 import com.woojin.recipick.presentation.theme.RecipickTheme
 
 @Composable

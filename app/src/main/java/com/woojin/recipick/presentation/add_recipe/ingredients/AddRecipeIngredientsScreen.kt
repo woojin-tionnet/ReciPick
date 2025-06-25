@@ -13,7 +13,7 @@ import androidx.navigation.NavHostController
 import com.woojin.recipick.R
 import com.woojin.recipick.data.local.model.FoodCategories
 import com.woojin.recipick.presentation.home.HomeViewModel
-import com.woojin.recipick.presentation.main.components.MyTopAppBar
+import com.woojin.recipick.presentation.components.MyTopAppBar
 
 @Composable
 fun AddRecipeIngredientsScreen(

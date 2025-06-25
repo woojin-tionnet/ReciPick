@@ -26,10 +26,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.woojin.recipick.R
-import com.woojin.recipick.presentation.main.components.AlertNoTitleFunc
-import com.woojin.recipick.presentation.main.components.FloatingButton
-import com.woojin.recipick.presentation.main.components.MyTopAppBar
-import com.woojin.recipick.presentation.main.components.RecipeMainItem
+import com.woojin.recipick.presentation.components.AlertNoTitleFunc
+import com.woojin.recipick.presentation.components.FloatingButton
+import com.woojin.recipick.presentation.components.MyTopAppBar
+import com.woojin.recipick.presentation.components.RecipeMainItem
 
 @Composable
 fun MyRecipeMain(

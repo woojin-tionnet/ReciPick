@@ -1,4 +1,4 @@
-package com.woojin.recipick.presentation.main.components
+package com.woojin.recipick.presentation.components
 
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.material.icons.Icons
