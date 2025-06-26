@@ -14,3 +14,5 @@
 .cxx
 local.properties
 .idea/
+# Firebase config file
+google-services.json
