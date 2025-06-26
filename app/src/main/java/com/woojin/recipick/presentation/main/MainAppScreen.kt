@@ -23,9 +23,7 @@ import com.woojin.recipick.presentation.home.HomeScreen
 import com.woojin.recipick.presentation.setting.SettingsScreen
 
 @Composable
-fun MainAppScreen(
-    activity: MainActivity
-) {
+fun MainAppScreen() {
     val navController = rememberNavController()
     val navItems = listOf(
         BottomNavItem.Home,
