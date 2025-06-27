@@ -32,6 +32,6 @@ fun MyTopAppBar(
         colors = TopAppBarDefaults.topAppBarColors(
             containerColor = mainColor
         ),
-        windowInsets = WindowInsets(0,0,0,0)
+        windowInsets = TopAppBarDefaults.windowInsets
     )
 }
