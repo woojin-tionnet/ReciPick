@@ -2,14 +2,11 @@ package com.woojin.recipick.presentation.home
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -52,7 +49,6 @@ fun MyRecipeMain(
                 iconString = "add"
             )
         },
-        contentWindowInsets = WindowInsets.safeDrawing
     ) { innerPadding ->
         val recipesState by viewModel.recipes.collectAsState() //저장된 레시피
         var showDeleteDialog by remember { mutableStateOf(false) } //삭제 확인 dialog 표시 여부

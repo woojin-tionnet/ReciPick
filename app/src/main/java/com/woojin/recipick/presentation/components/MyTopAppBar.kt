@@ -1,6 +1,5 @@
 package com.woojin.recipick.presentation.components
 
-import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.CenterAlignedTopAppBar
@@ -32,6 +31,5 @@ fun MyTopAppBar(
         colors = TopAppBarDefaults.topAppBarColors(
             containerColor = mainColor
         ),
-        windowInsets = TopAppBarDefaults.windowInsets
     )
 }

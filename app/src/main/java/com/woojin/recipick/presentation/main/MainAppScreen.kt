@@ -1,9 +1,6 @@
 package com.woojin.recipick.presentation.main
 
-import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -33,9 +30,7 @@ fun MainAppScreen() {
 
     Scaffold(
         bottomBar = {
-            NavigationBar(
-                windowInsets = WindowInsets.navigationBars
-            ) {
+            NavigationBar {
                 val navBackStackEntry by navController.currentBackStackEntryAsState()
                 val currentDestination = navBackStackEntry?.destination
 
@@ -60,7 +55,6 @@ fun MainAppScreen() {
                 }
             }
         },
-        contentWindowInsets = WindowInsets.safeDrawing
     ) { innerPaddingFromMainActivity ->
         // NavHost 가 화면의 메인 컨텐츠 영역을 차지
         NavHost(
