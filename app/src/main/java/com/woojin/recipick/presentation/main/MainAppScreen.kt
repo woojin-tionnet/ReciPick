@@ -55,12 +55,13 @@ fun MainAppScreen() {
                 }
             }
         },
-    ) { innerPaddingFromMainActivity ->
+    ) { unUsedPadding ->
+        val unUsed = unUsedPadding // 내부 TopBar 사용을 위해 여기서는 사용하지 않는다.
         // NavHost 가 화면의 메인 컨텐츠 영역을 차지
         NavHost(
             navController = navController,
             startDestination = BottomNavItem.Home.route, // 시작 화면 경로
-            modifier = Modifier.padding(innerPaddingFromMainActivity) // Scaffold 패딩 적용
+            modifier = Modifier
         ) {
             composable(BottomNavItem.Home.route) { HomeScreen() }
             composable(BottomNavItem.Community.route) { CommunityScreen() }
