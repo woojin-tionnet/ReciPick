@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -21,6 +23,8 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        val apiKey = gradleLocalProperties(rootDir, providers).getProperty("spoonacular_key")
+        buildConfigField("String", "SPOONACULAR_KEY", "$apiKey")
     }
 
     buildTypes {
@@ -40,6 +44,7 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
     composeOptions {
