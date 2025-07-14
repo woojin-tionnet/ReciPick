@@ -3,8 +3,10 @@ package com.woojin.recipick.di
 import com.woojin.recipick.data.local.datasource.AppPreferencesDataSource
 import com.woojin.recipick.data.local.datasource.AppPreferencesDataSourceImpl
 import com.woojin.recipick.data.repository.LoginRepositoryImpl
+import com.woojin.recipick.data.repository.RecipeApiRepositoryImpl
 import com.woojin.recipick.data.repository.RecipeRepositoryImpl
 import com.woojin.recipick.domain.repository.LoginRepository
+import com.woojin.recipick.domain.repository.RecipeApiRepository
 import com.woojin.recipick.domain.repository.RecipeRepository
 import dagger.Binds
 import dagger.Module
@@ -30,4 +32,8 @@ abstract class RepositoryModule {
         appPreferencesDataSourceImpl: AppPreferencesDataSourceImpl
     ): AppPreferencesDataSource
 
+    @Binds
+    abstract fun bindRecipeApiRepository(
+        recipeApiRepositoryImpl: RecipeApiRepositoryImpl
+    ): RecipeApiRepository
 }
