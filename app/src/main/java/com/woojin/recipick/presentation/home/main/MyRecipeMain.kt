@@ -27,7 +27,6 @@ import com.woojin.recipick.R
 import com.woojin.recipick.presentation.components.AlertNoTitleFunc
 import com.woojin.recipick.presentation.components.FloatingButton
 import com.woojin.recipick.presentation.components.MyTopAppBar
-import com.woojin.recipick.presentation.components.RecipeMainItem
 import com.woojin.recipick.presentation.home.HomeViewModel
 
 @Composable
