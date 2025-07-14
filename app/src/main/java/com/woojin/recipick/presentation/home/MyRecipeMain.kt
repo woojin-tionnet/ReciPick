@@ -19,6 +19,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -49,6 +50,7 @@ fun MyRecipeMain(
                 iconString = "add"
             )
         },
+        containerColor = Color.White
     ) { innerPadding ->
         val recipesState by viewModel.recipes.collectAsState() //저장된 레시피
         var showDeleteDialog by remember { mutableStateOf(false) } //삭제 확인 dialog 표시 여부

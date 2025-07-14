@@ -8,12 +8,13 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import com.woojin.recipick.R
 import com.woojin.recipick.data.local.model.FoodCategories
-import com.woojin.recipick.presentation.home.HomeViewModel
 import com.woojin.recipick.presentation.components.MyTopAppBar
+import com.woojin.recipick.presentation.home.HomeViewModel
 
 @Composable
 fun AddRecipeIngredientsScreen(
@@ -28,7 +29,8 @@ fun AddRecipeIngredientsScreen(
                 true,
                 onBackClick = { navController.popBackStack() }
             )
-        }
+        },
+        containerColor = Color.White
     ) { innerPadding ->
         val scrollState = rememberScrollState()
         Column(

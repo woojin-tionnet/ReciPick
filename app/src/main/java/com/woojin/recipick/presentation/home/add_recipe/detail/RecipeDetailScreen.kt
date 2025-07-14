@@ -120,7 +120,8 @@ fun RecipeDetail(
                 },
                 iconString = if (recipeDetailUiState.isEditMode) "save" else "edit"
             )
-        }
+        },
+        containerColor = Color.White
     ) { innerPadding ->
         Surface(
             color = Color.White,
