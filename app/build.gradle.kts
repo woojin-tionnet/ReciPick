@@ -94,6 +94,16 @@ dependencies {
     //GSON
     implementation(libs.gson)
 
+    //okhttp
+    implementation(platform(libs.okhttp.bom))
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+
+    //retrofit
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+    implementation (libs.adapter.rxjava2)
+
     //FireBase
     // Import the BoM for the Firebase platform
     implementation(platform(libs.firebase.bom))
