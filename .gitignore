@@ -16,3 +16,5 @@ local.properties
 .idea/
 # Firebase config file
 google-services.json
+recipick.keystore
+new_upload_certificate.pem
