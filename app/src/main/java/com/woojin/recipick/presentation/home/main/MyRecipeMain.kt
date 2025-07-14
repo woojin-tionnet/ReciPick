@@ -1,4 +1,4 @@
-package com.woojin.recipick.presentation.home
+package com.woojin.recipick.presentation.home.main
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -28,6 +28,7 @@ import com.woojin.recipick.presentation.components.AlertNoTitleFunc
 import com.woojin.recipick.presentation.components.FloatingButton
 import com.woojin.recipick.presentation.components.MyTopAppBar
 import com.woojin.recipick.presentation.components.RecipeMainItem
+import com.woojin.recipick.presentation.home.HomeViewModel
 
 @Composable
 fun MyRecipeMain(

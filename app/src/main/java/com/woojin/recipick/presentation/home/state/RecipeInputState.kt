@@ -1,4 +1,4 @@
-package com.woojin.recipick.presentation.home.add_recipe.state
+package com.woojin.recipick.presentation.home.state
 
 data class RecipeInputState(
     val title: String = "", //요리 제목

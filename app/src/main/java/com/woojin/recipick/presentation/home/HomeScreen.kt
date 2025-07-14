@@ -11,10 +11,11 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.woojin.recipick.presentation.home.add_recipe.detail.RecipeDetailScreen
-import com.woojin.recipick.presentation.home.add_recipe.ingredients.AddRecipeIngredientsScreen
-import com.woojin.recipick.presentation.home.add_recipe.steps.AddRecipeStepsScreen
-import com.woojin.recipick.presentation.home.add_recipe.title_and_ingredients.AddRecipeTitleAndIngredients
+import com.woojin.recipick.presentation.home.detail.RecipeDetailScreen
+import com.woojin.recipick.presentation.home.ingredients.AddRecipeIngredientsScreen
+import com.woojin.recipick.presentation.home.steps.AddRecipeStepsScreen
+import com.woojin.recipick.presentation.home.title_and_ingredients.AddRecipeTitleAndIngredients
+import com.woojin.recipick.presentation.home.main.MyRecipeMain
 
 @Composable
 fun HomeScreen() {

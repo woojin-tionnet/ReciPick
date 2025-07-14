@@ -1,4 +1,4 @@
-package com.woojin.recipick.presentation.home.add_recipe.detail
+package com.woojin.recipick.presentation.home.detail
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

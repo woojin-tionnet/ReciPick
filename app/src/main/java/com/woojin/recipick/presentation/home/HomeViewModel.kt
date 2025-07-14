@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.woojin.recipick.data.local.dao.RecipeDao
 import com.woojin.recipick.data.local.entity.RecipeEntity
-import com.woojin.recipick.presentation.home.add_recipe.state.RecipeInputState
+import com.woojin.recipick.presentation.home.state.RecipeInputState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow

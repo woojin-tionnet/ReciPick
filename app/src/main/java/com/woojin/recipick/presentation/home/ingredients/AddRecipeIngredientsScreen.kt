@@ -1,4 +1,4 @@
-package com.woojin.recipick.presentation.home.add_recipe.ingredients
+package com.woojin.recipick.presentation.home.ingredients
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize

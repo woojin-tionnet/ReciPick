@@ -1,4 +1,4 @@
-package com.woojin.recipick.presentation.home.add_recipe.detail
+package com.woojin.recipick.presentation.home.detail
 
 import com.woojin.recipick.data.local.entity.RecipeEntity
 
