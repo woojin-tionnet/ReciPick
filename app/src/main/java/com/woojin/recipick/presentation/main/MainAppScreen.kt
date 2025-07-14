@@ -1,5 +1,8 @@
 package com.woojin.recipick.presentation.main
 
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.calculateEndPadding
+import androidx.compose.foundation.layout.calculateStartPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
@@ -9,6 +12,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalLayoutDirection
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
@@ -55,13 +60,19 @@ fun MainAppScreen() {
                 }
             }
         },
-    ) { unUsedPadding ->
-        val unUsed = unUsedPadding // 내부 TopBar 사용을 위해 여기서는 사용하지 않는다.
+    ) { scaffoldInnerPadding ->
+        val layoutDirection = LocalLayoutDirection.current
+        val navHostPadding = PaddingValues(
+            start = scaffoldInnerPadding.calculateStartPadding(layoutDirection), // 좌측 패딩 유지
+            top = 0.dp, // 상단 패딩 제거, 내부 Scaffold 에서 적용할 예정
+            end = scaffoldInnerPadding.calculateEndPadding(layoutDirection),   // 우측 패딩 유지
+            bottom = scaffoldInnerPadding.calculateBottomPadding() // 하단 패딩만 사용
+        )
         // NavHost 가 화면의 메인 컨텐츠 영역을 차지
         NavHost(
             navController = navController,
             startDestination = BottomNavItem.Home.route, // 시작 화면 경로
-            modifier = Modifier
+            modifier = Modifier.padding(navHostPadding)
         ) {
             composable(BottomNavItem.Home.route) { HomeScreen() }
             composable(BottomNavItem.Community.route) { CommunityScreen() }
