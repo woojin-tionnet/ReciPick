@@ -18,10 +18,19 @@ class SettingsViewModel @Inject constructor(
     private val signInGoogleUseCase: SignInGoogleUseCase,
     private val signOutGoogleUseCase: SignOutGoogleUseCase
 ) : ViewModel() {
+    private val _navigateToScreen = MutableSharedFlow<Screen>()
+    val navigateToScreen: SharedFlow<Screen> = _navigateToScreen.asSharedFlow()
     private val _signInGoogleState = MutableSharedFlow<LoginResult>()
     val signInGoogleState: SharedFlow<LoginResult> = _signInGoogleState.asSharedFlow()
     private val _signOutGoogleState = MutableSharedFlow<LoginResult>()
     val signOutGoogleState: SharedFlow<LoginResult> = _signOutGoogleState.asSharedFlow()
+
+    /** 화면 전환 */
+    fun navUpdate(value: Screen) {
+        viewModelScope.launch {
+            _navigateToScreen.emit(value)
+        }
+    }
 
     fun googleLogin(activity: Activity) {
         viewModelScope.launch {

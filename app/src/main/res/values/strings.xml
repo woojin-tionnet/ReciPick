@@ -41,6 +41,7 @@
     <string name="community_title">커뮤니티</string>
 
     <!--  설정 메인  -->
+    <string name="settings_title">설정</string>
     <string name="login_success">로그인 성공</string>
     <string name="login_fail">로그인 실패</string>
     <string name="logout_success">로그아웃 성공</string>
