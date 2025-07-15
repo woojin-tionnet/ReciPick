@@ -9,11 +9,8 @@ import com.woojin.recipick.domain.usecase.SearchRecipeUseCase
 import com.woojin.recipick.state.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
-import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -26,12 +23,12 @@ class CommunityViewModel @Inject constructor(
     private val _navigateToScreen = MutableSharedFlow<Screen>()
     val navigateToScreen: SharedFlow<Screen> = _navigateToScreen.asSharedFlow()
     private val _randomRecipeState =
-        MutableStateFlow<UiState<RecipeRandomResponse>>(UiState.Uninitialized)
-    val randomRecipeState: StateFlow<UiState<RecipeRandomResponse>> = _randomRecipeState.asStateFlow()
+        MutableSharedFlow<UiState<RecipeRandomResponse>>()
+    val randomRecipeState: SharedFlow<UiState<RecipeRandomResponse>> = _randomRecipeState.asSharedFlow()
     private val _searchRecipeState =
-        MutableStateFlow<UiState<RecipeSearchResponse>>(UiState.Uninitialized)
-    val searchRecipeState: StateFlow<UiState<RecipeSearchResponse>> =
-        _searchRecipeState.asStateFlow()
+        MutableSharedFlow<UiState<RecipeSearchResponse>>()
+    val searchRecipeState: SharedFlow<UiState<RecipeSearchResponse>> =
+        _searchRecipeState.asSharedFlow()
 
     /** 화면 전환 */
     fun navUpdate(value: Screen) {
@@ -42,7 +39,6 @@ class CommunityViewModel @Inject constructor(
 
     /** 랜덤 레시피 호출 */
     fun requestRandomRecipe() {
-        _randomRecipeState.value = UiState.Loading
         viewModelScope.launch {
             _randomRecipeState.emit(getRandomRecipeUseCase())
         }
@@ -54,7 +50,6 @@ class CommunityViewModel @Inject constructor(
         cuisine: String? = "", //요리 국가/지역 (italian, korean)
         number: Int? = 0, //검색 결과 레시피 수
     ) {
-        _searchRecipeState.value = UiState.Loading
         viewModelScope.launch {
             _searchRecipeState.emit(
                 searchRecipeUseCase(
