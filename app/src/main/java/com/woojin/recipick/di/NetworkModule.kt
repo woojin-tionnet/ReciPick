@@ -1,8 +1,8 @@
 package com.woojin.recipick.di
 
-import com.google.firebase.components.BuildConfig
+import com.woojin.recipick.BuildConfig
 import com.woojin.recipick.data.remote.datasource.NetworkInterface
-import com.woojin.recipick.utils.Constants
+import com.woojin.recipick.utils.UrlConstants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -45,7 +45,7 @@ object NetworkModule {
     @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(Constants.SPOONACULAR_BASE_URL)
+            .baseUrl(UrlConstants.SPOONACULAR_BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
