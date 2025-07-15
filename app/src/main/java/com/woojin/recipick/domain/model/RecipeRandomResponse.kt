@@ -3,7 +3,7 @@ package com.woojin.recipick.domain.model
 // 랜덤 레시피 API 응답을 위한 데이터 클래스 예시 (Kotlin)
 // 각 변수의 의미를 상세 주석으로 설명
 
-data class RecipeResponse(
+data class RecipeRandomResponse(
     val recipes: List<Recipes>
 )
 

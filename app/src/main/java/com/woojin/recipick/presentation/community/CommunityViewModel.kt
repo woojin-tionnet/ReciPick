@@ -2,7 +2,7 @@ package com.woojin.recipick.presentation.community
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.woojin.recipick.domain.model.RecipeResponse
+import com.woojin.recipick.domain.model.RecipeRandomResponse
 import com.woojin.recipick.domain.model.RecipeSearchResponse
 import com.woojin.recipick.domain.usecase.GetRandomRecipeUseCase
 import com.woojin.recipick.domain.usecase.SearchRecipeUseCase
@@ -26,8 +26,8 @@ class CommunityViewModel @Inject constructor(
     private val _navigateToScreen = MutableSharedFlow<Screen>()
     val navigateToScreen: SharedFlow<Screen> = _navigateToScreen.asSharedFlow()
     private val _randomRecipeState =
-        MutableStateFlow<UiState<RecipeResponse>>(UiState.Uninitialized)
-    val randomRecipeState: StateFlow<UiState<RecipeResponse>> = _randomRecipeState.asStateFlow()
+        MutableStateFlow<UiState<RecipeRandomResponse>>(UiState.Uninitialized)
+    val randomRecipeState: StateFlow<UiState<RecipeRandomResponse>> = _randomRecipeState.asStateFlow()
     private val _searchRecipeState =
         MutableStateFlow<UiState<RecipeSearchResponse>>(UiState.Uninitialized)
     val searchRecipeState: StateFlow<UiState<RecipeSearchResponse>> =
