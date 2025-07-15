@@ -1,5 +1,6 @@
 package com.woojin.recipick.presentation.community
 
+import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -37,6 +38,17 @@ fun CommunityMain(
             }
         }
     }
+    LaunchedEffect(key1 = Unit) {
+        viewModel.searchRecipeState.collect { state ->
+            when (state) {
+                is UiState.Success -> {
+                    val result = state.data
+                    Toast.makeText(context, result.results[0].title, Toast.LENGTH_SHORT).show()
+                }
+                else -> {}
+            }
+        }
+    }
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         topBar = {
@@ -60,6 +72,11 @@ fun CommunityMain(
                 onClick = { viewModel.requestRandomRecipe() }
             ) {
                 Text("랜덤 제목")
+            }
+            Button(
+                onClick = { viewModel.searchRecipe("pasta") }
+            ) {
+                Text("pasta 검색")
             }
         }
     }
