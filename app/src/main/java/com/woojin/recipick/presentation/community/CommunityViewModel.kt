@@ -51,8 +51,8 @@ class CommunityViewModel @Inject constructor(
     /** 레시피 검색 */
     fun searchRecipe(
         query: String, //재료 or 제목
-        cuisine: String, //요리 국가/지역 (italian, korean)
-        number: Int, //검색 결과 레시피 수
+        cuisine: String? = "", //요리 국가/지역 (italian, korean)
+        number: Int? = 0, //검색 결과 레시피 수
     ) {
         _searchRecipeState.value = UiState.Loading
         viewModelScope.launch {
