@@ -77,6 +77,9 @@ fun CommunityMain(
             ) {
                 Text("pasta 검색")
             }
+            Text(
+                "안녕~~~~~ 하세요오~"
+            )
         }
     }
 }
