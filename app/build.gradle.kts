@@ -1,4 +1,6 @@
 import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+import com.android.builder.model.PROPERTY_SIGNING_KEY_ALIAS
+import com.android.builder.model.PROPERTY_SIGNING_KEY_PASSWORD
 
 plugins {
     alias(libs.plugins.android.application)
@@ -9,6 +11,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        create("release") {
+            storeFile = file(properties["STORE_FILE"] as String)
+            storePassword = properties["KEYSTORE_PASSWORD"] as String
+            keyAlias = properties["KEY_ALIAS"] as String
+            keyPassword = properties["KEY_PASSWORD"] as String
+        }
+    }
     namespace = "com.woojin.recipick"
     compileSdk = 35
 
@@ -34,6 +44,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
         }
 
         debug {
