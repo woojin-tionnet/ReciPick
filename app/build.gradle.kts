@@ -13,10 +13,10 @@ plugins {
 android {
     signingConfigs {
         create("release") {
-            storeFile = file(properties["STORE_FILE"] as String)
-            storePassword = properties["KEYSTORE_PASSWORD"] as String
-            keyAlias = properties["KEY_ALIAS"] as String
-            keyPassword = properties["KEY_PASSWORD"] as String
+            storeFile = file(project.properties["STORE_FILE"] as String)
+            storePassword = project.properties["KEYSTORE_PASSWORD"] as String
+            keyAlias = project.properties["KEY_ALIAS"] as String
+            keyPassword = project.properties["KEY_PASSWORD"] as String
         }
     }
     namespace = "com.woojin.recipick"
