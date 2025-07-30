@@ -16,5 +16,6 @@ local.properties
 .idea/
 # Firebase config file
 google-services.json
+gradle.properties
 recipick.keystore
 new_upload_certificate.pem
