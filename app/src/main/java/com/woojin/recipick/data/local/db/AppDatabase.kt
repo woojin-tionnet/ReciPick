@@ -6,7 +6,7 @@ import androidx.room.TypeConverters
 import com.woojin.recipick.data.local.dao.RecipeDao
 import com.woojin.recipick.data.local.entity.RecipeEntity
 
-@Database(entities = [RecipeEntity::class], version = 1)
+@Database(entities = [RecipeEntity::class], version = 1, exportSchema = false)
 @TypeConverters(ListOfStringConverter::class)
 abstract class AppDatabase: RoomDatabase() {
     abstract fun recipeDao(): RecipeDao

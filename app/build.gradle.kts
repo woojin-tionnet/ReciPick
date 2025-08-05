@@ -35,6 +35,10 @@ android {
         }
         val apiKey = gradleLocalProperties(rootDir, providers).getProperty("spoonacular_key")
         buildConfigField("String", "SPOONACULAR_KEY", "$apiKey")
+
+        ksp {
+            arg("room.schemaLocation", "$projectDir/schemas")
+        }
     }
 
     buildTypes {
