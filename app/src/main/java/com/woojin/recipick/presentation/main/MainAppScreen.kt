@@ -21,6 +21,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.woojin.recipick.BuildConfig
+import com.woojin.recipick.ad.AdConstants
 import com.woojin.recipick.presentation.community.CommunityScreen
 import com.woojin.recipick.presentation.components.AdmobBanner
 import com.woojin.recipick.presentation.home.HomeScreen
@@ -83,7 +85,8 @@ fun MainAppScreen() {
                 composable(BottomNavItem.Community.route) { CommunityScreen() }
                 composable(BottomNavItem.Settings.route) { SettingsScreen() }
             }
-            AdmobBanner(adUnitId = "ca-app-pub-3940256099942544/9214589741")
+            val adUnitId = if(BuildConfig.DEBUG) AdConstants.TEST_BANNER_ID else AdConstants.RELEASE_BANNER_ID
+            AdmobBanner(adUnitId = adUnitId)
         }
     }
 }
