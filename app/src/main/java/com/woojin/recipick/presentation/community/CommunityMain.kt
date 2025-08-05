@@ -67,19 +67,16 @@ fun CommunityMain(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(text = "준비중 입니다.", fontSize = 24.sp)
-            Button(
-                onClick = { viewModel.requestRandomRecipe() }
-            ) {
-                Text("랜덤 제목")
-            }
-            Button(
-                onClick = { viewModel.searchRecipe("pasta") }
-            ) {
-                Text("pasta 검색")
-            }
-            Text(
-                "안녕~~~~~ 하세요오~"
-            )
+//            Button(
+//                onClick = { viewModel.requestRandomRecipe() }
+//            ) {
+//                Text("랜덤 제목")
+//            }
+//            Button(
+//                onClick = { viewModel.searchRecipe("pasta") }
+//            ) {
+//                Text("pasta 검색")
+//            }
         }
     }
 }
