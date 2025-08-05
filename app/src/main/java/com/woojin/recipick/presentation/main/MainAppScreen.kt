@@ -1,5 +1,6 @@
 package com.woojin.recipick.presentation.main
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.calculateEndPadding
 import androidx.compose.foundation.layout.calculateStartPadding
@@ -21,6 +22,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.woojin.recipick.presentation.community.CommunityScreen
+import com.woojin.recipick.presentation.components.AdmobBanner
 import com.woojin.recipick.presentation.home.HomeScreen
 import com.woojin.recipick.presentation.setting.SettingsScreen
 
@@ -68,15 +70,20 @@ fun MainAppScreen() {
             end = scaffoldInnerPadding.calculateEndPadding(layoutDirection),   // 우측 패딩 유지
             bottom = scaffoldInnerPadding.calculateBottomPadding() // 하단 패딩만 사용
         )
-        // NavHost 가 화면의 메인 컨텐츠 영역을 차지
-        NavHost(
-            navController = navController,
-            startDestination = BottomNavItem.Home.route, // 시작 화면 경로
+        Column (
             modifier = Modifier.padding(navHostPadding)
         ) {
-            composable(BottomNavItem.Home.route) { HomeScreen() }
-            composable(BottomNavItem.Community.route) { CommunityScreen() }
-            composable(BottomNavItem.Settings.route) { SettingsScreen() }
+            // NavHost 가 화면의 메인 컨텐츠 영역을 차지
+            NavHost(
+                navController = navController,
+                startDestination = BottomNavItem.Home.route, // 시작 화면 경로
+                modifier = Modifier.weight(1f)
+            ) {
+                composable(BottomNavItem.Home.route) { HomeScreen() }
+                composable(BottomNavItem.Community.route) { CommunityScreen() }
+                composable(BottomNavItem.Settings.route) { SettingsScreen() }
+            }
+            AdmobBanner(adUnitId = "ca-app-pub-3940256099942544/9214589741")
         }
     }
 }
